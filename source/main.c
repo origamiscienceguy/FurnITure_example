@@ -4,14 +4,16 @@
 int main(void)
 {
 	irq_init(isr_master);
-	irq_enable(II_VCOUNT);
-	irq_enable(II_TIMER1);
 	irq_add(II_VCOUNT, audioVcountISR);
 	irq_add(II_TIMER1, audioTimer1ISR);
+	irq_add(II_VBLANK, NULL);
 
 	audioInitialize();
 	
 	playNewSound(_musMainMenu);
 	
-	while(1);
+	while(1){
+		VBlankIntrWait();
+		processAudio();
+	}
 }
