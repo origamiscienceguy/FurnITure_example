@@ -1,25 +1,26 @@
 ## Quickstart
 
-> _"I want to make GBA homebrew, where do I begin?"_
+> _"I want to play a song. Where do I begin?"_
 
 
-1) [Install devkitARM](https://devkitpro.org/wiki/Getting_Started) for your system.
+1) Setup devkitPro and Tonc
 
-2) [Read Tonc](https://www.coranac.com/tonc/text/) to learn all about GBA programming!  
-    * You can skip _"Setting up a development environment"_ because we did that in step 1.
+2) Run the python script conv_audio.py found in the scripts folder.
 
-3) Clone this repo and run `make` in your terminal.
-    * If you used the graphical installer on Windows for step 1, you should use the _MSYS2_ terminal for this step.
+3) Run make.
 
 
-## About this repo
+> _"It's not working, what is going wrong?"_
 
-This is a minimal GBA example project using libtonc instead of libgba.
+There are a few issues that might be happening.
+Try everything in this list first before asking me for help.
 
-The commit history exists to document the process of converting a _libgba_ example to a _libtonc_ example.
+-Make sure that sample compression is turned off. In OpenMPT, this is done
+ by setting the advanced setting ITCompressionMono to 0.
 
-### Why?
+-Make sure that all samples have a unique name. Samples with identical names
+ will be treated as duplicates in order to save space.
 
-devkitPro provides two general-purpose libraries: _libgba_ and _libtonc_. Of the two, I recommend _libtonc_, because it has better documentation and more features (it's part of the accompanying material to the excellent Tonc tutorial).
-
-The trouble here is that all the GBA examples are using _libgba_, and converting the _libgba_ template to use _libtonc_ is non-trivial for those who are just getting started.
+-Make sure that instruments are used, not just samples. In OpenMPT, you can convert
+ samples to instruments by going to the instruments tab, clicking "insert new
+ instrument" and it will prompt you to convert all samples to instruments.
