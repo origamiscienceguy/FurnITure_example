@@ -5,9 +5,16 @@
 
 1) Setup devkitPro and Tonc
 
-2) Run the python script conv_audio.py found in the scripts folder.
+2) Place your song into the resources/sounds folder.
 
-3) Run make.
+3) Run the python script conv_audio.py found in the scripts folder.
+
+4) Open audio/source/audio_assets_enum.c and find the enumeration that
+   coresponds to your song
+
+5) In main.c, replace _musMainMenu with the enumeration for your song.
+
+6) Run make.
 
 
 > _"It's not working, what is going wrong?"_
